@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="loginMapper">
+
+	<!-- id_Chk에 랜덤값주기 -->
+	<update id="id_ChkUp" parameterType="map">
+		update admin_signup set id_Chk = #{id_Chk} where admin_email = #{admin_email}
+	</update>
+	
+	<!-- id_Chk 랜덤으로 준 값 가져오기 -->
+	<select id="getId_Chk" parameterType="string" resultType="string">
+		select id_Chk from admin_signup where id_Chk = #{id_Chk} 
+	</select>
+	
+	<!-- id 찾을때 랜덤값과 일치여부 -->
+	<select id="id_id_Chk" parameterType="string" resultType="int">
+		select count(*) from admin_signup where id_Chk = #{id_Chk}
+	</select>
+	
+	<!-- 입력한 랜덤값과 값이 일치하면 id값 출력 -->
+	<select id="getId" parameterType="map" resultType="string">
+		select admin_id from admin_signup where id_Chk = #{id_Chk} and admin_email = #{admin_email}
+	</select>
+	
+	<!-- id, Email 로 있는지 확인 -->
+	<select id="chk_Id_Pwd" parameterType="map" resultType="int">
+		select count(*) from admin_signup where admin_id = #{admin_id} and admin_email = #{admin_email}
+	</select>
+	
+	<!-- id, Email , chk 여부확인 -->
+	<select id="changePwdcount" parameterType="map" resultType="int">
+		select count(*) from admin_signup where admin_id = #{admin_id} and admin_email = #{admin_email} and id_Chk = #{id_Chk}
+	</select>
+	
+	<!-- id, Email , chk 로 비밀번호 변경하기 -->
+	<update id="changePwd" parameterType="map">
+		update admin_signup set admin_Password = #{admin_password} where admin_id = #{admin_id} and admin_email = #{admin_email}
+	</update>
+	
+	<!-- 로그인시 id 존재여부확인 -->
+	<select id="loginIdChk" parameterType="string" resultType="int">
+		select count(*) from admin_signup where admin_id = #{admin_id}
+	</select>
+	
+	<!-- id가 맞으면 비밀번호 확인 -->
+	<select id="loginPwdchk" parameterType="string" resultType="string">
+		select admin_password from admin_signup where admin_id = #{admin_id}
+	</select>
+	
+	<!-- 세션에 저장할 정보 -->
+	<select id="sessionInfo" parameterType="map" resultType="dagachi.board.model.hjModel.AdminMembershipDetailsDto">
+		select * from admin_signup where admin_id = #{admin_id} and admin_password = #{admin_password}
+	</select>
+	
+</mapper>

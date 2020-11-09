@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Comment">
+	
+	<insert id="insertcmt" parameterType="dagachi.board.model.hjModel.CommentDto">
+		insert into comment (cmtWriter, cmtPassword, cmtContents, cmtDate, owner_Notice_Num)
+			values (#{cmtWriter}, #{cmtPassword}, #{cmtContents}, #{cmtDate}, #{owner_Notice_Num} )
+	</insert>
+	
+	<select id="getCnt" resultType="int" parameterType="int">
+		select count(*) from comment where owner_Notice_Num = #{owner_Notice_Num}
+	</select>
+	
+	<select id="selectcmt" resultType="dagachi.board.model.hjModel.CommentDto" parameterType="map">
+		select * from comment where owner_Notice_Num = #{owner_Notice_Num} limit #{start} , #{per}
+	</select>
+	
+	<update id="upcmt" parameterType="map" >
+		update comment set cmtContents = #{cmtContents} where cmtNumber = #{cmtNumber}
+	</update>
+	
+	<select id="cmtcnt" resultType="int" parameterType="int">
+	 select count(*) from comment where owner_Notice_Num = #{owner_Notice_Num}
+	</select>
+	
+	<delete id="delcmt" parameterType="int">
+		delete from comment where cmtNumber = #{cmtNumber} 
+	</delete>
+	
+	<select id="getPwd" parameterType="int" resultType="string">
+		select cmtPassword from comment where cmtNumber = #{cmtNumber}
+	</select>
+	
+	<select id="getContents" parameterType="int" resultType="string">
+		select cmtContents from comment where cmtNumber = #{cmtNumber}
+	</select>
+	
+	
+	
+</mapper>

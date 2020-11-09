@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminQuery">
+
+<select id="adminSel" resultType="dagachi.board.model.hjModel.AdminMembershipDetailsDto">
+	select * from Admin_SignUp
+</select>
+
+<select id="adminSel_1" resultType="dagachi.board.model.hjModel.AdminMembershipDetailsDto" parameterType="int">
+	select * from Admin_SignUp where Admin_num = #{admin_Num}
+</select>
+
+<insert id="adminAdd" parameterType="dagachi.board.model.hjModel.AdminMembershipDetailsDto" >
+insert into Admin_SignUp (Admin_name, Admin_id, Admin_password, Admin_email, Admin_phoneNumber, Dept, Admin_Author)
+	values(#{admin_Name},#{admin_Id},#{admin_Password},#{admin_Email},#{admin_PhoneNumber},#{dept},#{admin_Author});
+</insert>
+
+<update id="adminUp" parameterType="dagachi.board.model.hjModel.AdminMembershipDetailsDto">
+update Admin_SignUp set Admin_name = #{admin_Name}, Admin_password = #{admin_Password}, Admin_email = #{admin_Email}, Admin_phoneNumber = #{admin_PhoneNumber} , Dept = #{dept}, Admin_Author = #{admin_Author} where Admin_id = #{admin_Id}
+</update>
+
+<delete id="adminDel">
+	delete from Admin_SignUp where Admin_num = #{admin_Num}
+</delete>
+
+<select id="count" resultType="int">
+		select count(*) from Admin_SignUp
+	</select>
+	
+	<select parameterType="map" id="limitList" resultType="dagachi.board.model.hjModel.AdminMembershipDetailsDto">
+		select * from Admin_SignUp limit #{start},#{per}
+	</select>
+	
+	<select id="searchAdmin" resultType="int" parameterType="int">
+		select count(*) from Admin_SignUp where Admin_num like #{admin_Num}
+	</select>
+	
+	<select id="searchLimitList" parameterType="map" resultType="dagachi.board.model.hjModel.AdminMembershipDetailsDto">
+		select * from Admin_SignUp where Admin_num like #{admin_Num} limit #{start},#{per}
+	</select>
+	
+	<select id="duplicateChk" resultType="int" parameterType="string">
+		select count(*) from Admin_SignUp where Admin_id = #{admin_Id}
+	</select>
+	
+	<select id="emailDuplicateChk" resultType="int" parameterType="string">
+		select count(*) from Admin_SignUp where admin_email = #{admin_Email}
+	</select>
+
+</mapper>

@@ -1,0 +1,127 @@
+@charset "EUC-KR";
+
+	#menu {
+	width: 1500px;
+	height:50px;
+	background-color: rgb(233,99,96);
+	margin-left: 0%;
+	margin-top: 6%;
+	margin-bottom:20px;
+	z-index:17;
+	position: absolute;
+	}
+
+	#tablemenu {
+	width: 1000px;
+	height:50px;
+	background-color: #665F79;
+	margin-left: 17%;
+	margin-top: 10%;
+	margin-bottom:20px;
+	z-index: 18;
+	outline: none;
+	position: absolute;
+	border: none;
+	}
+	
+	#tata {
+	margin-top: 140px;
+	width: 1000px;
+	height:550px;
+	margin-left: 17%;
+	margin-top: 9%;
+	background-color: white;
+	z-index: 16;
+	position: absolute;
+	}
+	
+	#back {
+	width: 1500px;
+	height: 800px;
+	background: #E98583;
+	margin-left: 11%;
+	margin-top: 4%;
+	align-content: center;
+	border: 3px;
+	border-left-color: black;
+	position: absolute;
+	border-radius: 20px 20px 20px 20px;
+	}
+	
+	#list {
+	margin-top: 8%;
+	border-radius: 0px 0px 20px 20px;
+	
+	}
+	
+	#writeNotice {
+	position: absolute;
+	margin-top: -12%;
+	margin-left: 2%;
+	z-index: ;
+	}
+	
+	#search {
+	position: absolute;
+	}
+		
+	#customer, #franchise, #owner {
+	width:88px;
+    background-color: #f8585b;
+    border: none;
+    color:#fff;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px;
+    cursor: pointer;
+    outline: none;
+    }
+    
+    /* ¸Þ´ºCSS */
+	 ul {
+	 list-style:none;
+	 padding-left:20px;
+	 }
+	#menu {
+	height: 50px;
+	background: #f8585b;
+	color: white;
+	}	
+	#menu ul {
+		width: 600px;
+		margin: 0 auto;
+		padding-left: 18px;
+	}
+	#menu .main>li {
+		float:left;
+		width: 200px;
+		line-height: 50px;
+		text-align: center;
+		position: relative;
+		background-color: #f8585b;
+	}
+	#menu .main>li:hover .sub{
+		display: block;
+	}
+	#menu .main>li a{
+		display: block;
+		text-align: center;
+		text-decoration: none;
+		color: #EAEAEA;
+	}
+	#menu .main>li a:hover {
+		background: #EC4A68;
+		text-decoration: none;
+	}
+	#menu .main .sub {
+	position: absolute;
+	top: 50px;
+	width: 80%;
+	display: none;
+	}
+	#menu .main .sub li {
+	background: #f8585b;
+	}

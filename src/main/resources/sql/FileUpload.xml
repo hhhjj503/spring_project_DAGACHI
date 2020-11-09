@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="file">
+
+	<select id="fileGet" parameterType="int" resultType="dagachi.board.model.hjModel.FileUploadDto">
+		select * from fileUpload where Notice_Num = #{notice_Num}
+	</select>
+	
+	<select id="downLoad" parameterType="map" resultType="dagachi.board.model.hjModel.FileUploadDto">
+		select * from fileUpload where Notice_Num = #{notice_Num} and File_No = #{file_No}
+	</select>
+	
+	<select id="fileChk" parameterType="int" resultType="int">
+		select count(*) from fileUpload where Notice_Num = #{notice_Num}
+	</select>
+	
+	<insert id="fileUpload" parameterType="dagachi.board.model.hjModel.FileUploadDto">
+		insert into fileUpload (Notice_Num, Org_File_Name, Stored_FileName, Contents_Type, File_Size, RegDate)
+		values(#{notice_Num},#{org_File_Name}, #{stored_FileName}, #{contents_Type}, #{file_Size}, #{RegDate})
+	</insert>
+
+	<delete id="fileDel" parameterType="int">
+		delete from fileUpload where Notice_Num = #{notice_Num}
+	</delete>
+	
+	<delete id="fileDelOne" parameterType="map">
+		delete from fileUpload where Notice_Num = #{notice_Num} and file_No = #{file_No}
+	</delete>
+	
+</mapper>

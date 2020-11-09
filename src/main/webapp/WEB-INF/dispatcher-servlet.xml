@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!--  <bean id="helloController" class="spring.controller.HelloController" /> -->
+
+
+
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/html;charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:message-converters>
+</mvc:annotation-driven>
+
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
+
+	<context:component-scan base-package="dagachi.*,personal.*"/>	
+	
+
+	<bean id="tilesviewResolver"
+			class="org.springframework.web.servlet.view.tiles3.TilesViewResolver" />
+		<bean id="tilesConfigurer"
+			class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+			<property name="definitions">
+				<list>
+					<value>/WEB-INF/tilesdef/tilesdef.xml</value>
+				</list>
+			</property>
+		<property name="preparerFactoryClass" value="org.springframework.web.servlet.view.tiles3.SpringBeanPreparerFactory"/>
+	</bean>
+
+	<bean id="viewResolver1"
+			class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+	
+	<bean id="viewResolver2"	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".jsp" />
+	</bean>	
+	
+	
+	<!-- <bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>messages.validation</value>
+			</list>
+		</property>
+	</bean> -->
+ 
+	<!-- 이메일 빈 -->
+	<bean id="mailSender"
+			class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	    <property name="host" value="smtp.gmail.com" />
+	    <property name="port" value="587" /><!-- 465 or 25 -->
+	    <property name="username" value="kil312055@gmail.com" />
+	    <property name="password" value="15749guswo%" />
+	    <property name="defaultEncoding" value="utf-8" />
+	    <property name="javaMailProperties">
+	        <props>
+	            <prop key="mail.transport.protocol">smtp</prop>
+	            <prop key="mail.smtp.auth">true</prop>
+	            <prop key="mail.smtp.starttls.enable">true</prop>
+	            <prop key="mail.debug">true</prop>
+	        </props>
+	    </property>
+	</bean>
+
+	
+	<mvc:interceptors>
+		<!-- <mvc:interceptor>
+			<mvc:mapping path="/event/list.do" />
+			<bean class="spring.interceptor.EventExpirationCheckInterceptor" />
+		</mvc:interceptor> -->
+		
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"
+		p:paramName="language" /> <!-- localeResolver 반드시 있어야 함 -->
+		</mvc:interceptor>
+		
+	</mvc:interceptors>
+	
+	<!-- 예외발생시 무조건 error/exception 발생시킴 -->
+	<!-- <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.ArithmaricException">
+					error/mathException
+				</prop>
+				<prop key="java.lang.Exception">
+					error/exception
+				</prop>	
+			</props>
+		</property>
+	</bean> -->
+	
+	<bean id="messageSource"
+			class="org.springframework.context.support.ResourceBundleMessageSource">
+			<property name="basenames">
+				<list>
+					<value>messages.validation</value>
+					<value>messages.label</value>
+					<value>messages.label_en</value>
+				</list>
+			</property>
+		</bean>
+	
+	<!-- <bean id="pageXmlReport"
+		class="org.springframework.web.servlet.view.xml.MarshallingView">
+		<property name="marshaller" ref="marshaller" />
+		<property name="modelKey" value="report" />
+	</bean>
+ -->
+	<!-- <bean id="marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="classesToBeBound">
+			<list>
+				<value>spring.controller.PageRankReport</value>
+			</list>
+		</property>
+	</bean> -->
+	
+	<!-- 파일업로드 빈 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	 </bean>
+	
+	<bean
+		class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"
+		id="pageJsonReport" />
+		
+	
+	
+	<bean id="adminDto" class="dagachi.board.model.hjModel.AdminMembershipDetailsDto" />
+	
+	<bean id="adminDao" class="dagachi.board.service.hjService.AdminMembershipDetailsDao"
+		p:sqlSessionFactory-ref="sqlSessionFactory" />
+	
+	
+	<bean id="noticeDto" class="dagachi.board.model.hjModel.OwnerNoticeDto" />
+	
+	<bean id="noticeDao" class="dagachi.board.service.hjService.OwnerNoticeDao" 
+	p:sqlSessionFactory-ref="sqlSessionFactory"/>
+	
+	<bean id="pagingVO" class="dagachi.board.model.hjModel.PagingVO" />
+	
+	<bean id="pagingDao" class="dagachi.board.service.hjService.PagingDao"
+	p:sqlSessionFactory-ref="sqlSessionFactory"/>
+	
+	<!-- <bean id="ser2" class="project.board.service.OwnerNoticeService" /> -->
+		
+	<!-- <bean id="ser" class="project.board.service.AdminMembershipDetailsService" /> -->
+	
+	<bean id="fileDto" class="dagachi.board.model.hjModel.FileUploadDto"/>
+	
+	<bean id="fileDao" class="dagachi.board.service.hjService.FileUploadDao"
+	p:sqlSessionFactory-ref="sqlSessionFactory"/>
+
+	<bean id="commentDto" class="dagachi.board.model.hjModel.CommentDto"/>
+	
+	<bean id="commentPagingDao" class="dagachi.board.service.hjService.CommentPagingDao"
+	p:sqlSessionFactory-ref="sqlSessionFactory" />
+	
+	<bean id="commentPagingSer" class="dagachi.board.service.hjService.CommentPagingService" />
+		
+	<bean id="loginDao" class="dagachi.board.service.hjService.LoginDao"
+	p:sqlSessionFactory-ref="sqlSessionFactory"/>	
+		
+	<bean id="loginService" class="dagachi.board.service.hjService.LoginService" />
+	
+	<bean id="fineDust" class="personal.board.model.FineDustDto" />
+	
+</beans>

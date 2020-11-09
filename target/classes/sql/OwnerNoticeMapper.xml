@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="OwnerNotice">
+
+	<select id="noticeSel" resultType="dagachi.board.model.hjModel.OwnerNoticeDto">
+		select * from Owner_Notice
+	</select>
+	
+	<select id="noticeSel_1" resultType="dagachi.board.model.hjModel.OwnerNoticeDto" parameterType="int">
+		select * from Owner_Notice where Owner_Notice_Num = #{owner_Notice_Num}
+	</select>
+	
+	<insert id="noticeAdd" parameterType="dagachi.board.model.hjModel.OwnerNoticeDto">
+		insert into Owner_Notice(Owner_Notice_Content,Owner_Notice_Title,Owner_Notice_Created_Day,Admin_num)
+		values(#{owner_Notice_Content}, #{owner_Notice_Title}, #{owner_Notice_Created_Day}, #{admin_Num})
+	</insert>
+	
+	<update id="noticeUp" parameterType="dagachi.board.model.hjModel.OwnerNoticeDto" >
+		update Owner_Notice set Owner_Notice_Content = #{owner_Notice_Content},Owner_Notice_Title = #{owner_Notice_Title} where Owner_Notice_Num = #{owner_Notice_Num}
+	</update>
+	
+	<delete id="noticeDel" parameterType="int">
+		delete from Owner_Notice where Owner_Notice_Num = #{owner_Notice_Num}
+	</delete>
+	
+	<select id="count" resultType="int">
+		select count(*) from Owner_Notice
+	</select>
+	
+	<select parameterType="map" id="limitList" resultType="dagachi.board.model.hjModel.OwnerNoticeDto">
+		select * from Owner_Notice limit #{start},#{per}
+	</select>
+	
+	<select id="searchNotice_AdminNum" parameterType="map" resultType="dagachi.board.model.hjModel.OwnerNoticeDto">
+		select * from Owner_Notice where Admin_num like #{admin_Num} limit #{start},#{per}
+	</select>
+	
+	<select id="searchNotice_Title"  parameterType="map" resultType="dagachi.board.model.hjModel.OwnerNoticeDto">
+		select * from Owner_Notice where owner_Notice_Title like CONCAT('%', #{owner_Notice_Title}, '%') limit #{start},#{per}
+	</select>
+	
+	<select id="searchAdminCount" resultType="int">
+		select count(*) from Owner_Notice where Admin_num like #{admin_Num}
+	</select>
+	
+	<select id="searchTitleCount" resultType="int" parameterType="string">
+		select count(*) from Owner_Notice where owner_Notice_Title like '%' #{owner_Notice_Title} '%'
+	</select>
+	
+	
+	<select id="adminpwd" parameterType="map" resultType="string">
+	select admin_password from admin_signup where admin_num = #{admin_Num};
+	</select>
+		
+</mapper>

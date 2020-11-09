@@ -1,0 +1,11 @@
+@charset "EUC-KR";
+<style>
+	table {
+		width: 60%;
+	}
+	
+	table, th, td {
+		border:1px solid
+	}
+
+</style>
