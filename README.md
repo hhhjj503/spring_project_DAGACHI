@@ -20,11 +20,15 @@ Mysql 을 통해 회원정보를 관리합니다
 
 <로그인 페이지>
 
-#### 사용 언어 및 프레임워크
+#### 사용 언어 및 프레임워크, 구현환경
 
 Language : HTML, CSS, JSP, JAVA
 
 Framework : Spring, Mybatis
+
+WAS : Apache Tomcat
+
+OS : window
 
 ##
 
@@ -38,9 +42,12 @@ Framework : Spring, Mybatis
 
 <메인 페이지>
 
-#### 사용 언어 및 프레임워크
+#### 사용 언어 및 프레임워크, 구현환경
 
 Language : HTML, CSS, JSP, JAVA
 
 Framework : Spring
 
+WAS : Apache Tomcat
+
+OS : window
