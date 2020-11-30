@@ -18,6 +18,8 @@ Mysql 을 통해 회원정보를 관리합니다
 
 ![DAGACHI MAIN](./images/Admin_Login.png)
 
+<로그인 페이지>
+
 #### 사용 언어 및 프레임워크
 
 Language : HTML, CSS, JSP, JAVA
@@ -33,6 +35,8 @@ Framework : Spring, Mybatis
 특정 구를 입력하면 해당 구에 맞는 미세먼지 정보 및 대기정보를 제공 받을 수 있습니다
 
 ![YOU & ME MAIN](./images/finedustMain.png)
+
+<메인 페이지>
 
 #### 사용 언어 및 프레임워크
 
