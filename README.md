@@ -34,6 +34,8 @@ Framework : Spring, Mybatis
 
 ![YOU & ME MAIN](./images/finedustMain.png)
 
+#### 사용 언어 및 프레임워크
+
 Language : HTML, CSS, JSP, JAVA
 
 Framework : Spring
