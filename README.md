@@ -22,7 +22,7 @@ Mysql 을 통해 회원정보를 관리합니다
 
 #### 사용 언어 및 프레임워크, 구현환경
 
-Language : HTML, CSS, JSP, JAVA
+Language : HTML, CSS, JSP, JAVA , Javascript
 
 Framework : Spring, Mybatis
 
@@ -44,7 +44,7 @@ OS : window
 
 #### 사용 언어 및 프레임워크, 구현환경
 
-Language : HTML, CSS, JSP, JAVA
+Language : HTML, CSS, JSP, JAVA , Javascript
 
 Framework : Spring
 
