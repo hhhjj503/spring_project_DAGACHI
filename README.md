@@ -1,4 +1,4 @@
-# spring_project_DAGACHI , 미세먼지 정보 보기 사이트 YOU & ME 프로젝트
+# spring_project_DAGACHI , 미세먼지 정보 보기 사이트 YOU & MI 프로젝트
 
 ## DAGACHI (단체 팀 프로젝트)
 
@@ -10,11 +10,9 @@ Spring을 통해 음식점 예약 사이트를 만드는 DAGACHI 프로젝트 �
 
 #### 구현 기능 및 담당 부분
 
-게시판을 위주로 구현 했으며 기본적인 로그안, 회원가입, 아이디 또는 비밀번호 찾기 기능과 
+게시판 및 메인페이지, 로그인 , 댓글등의 기능을 구현 했으며 회원의 데이터는 Mysql 을 통해 관리합니다
 
-Mysql 을 통해 회원정보를 관리합니다
-
-회원은 가입 후 글을 작성할 수 있으며 파일업로드, 게시글 수정, 삭제, 회원정보 수정, 댓글 등의 작업이 가능합니다
+회원은 가입 후 글을 작성할 수 있으며 그 외 파일 (업로드 , 다운로드) , 게시글 (수정, 삭제), 회원정보 (수정, 탈퇴) , 댓글 (등록 , 수정, 삭제) 등의 작업이 가능합니다
 
 ![DAGACHI MAIN](./images/Admin_Login.png)
 
@@ -22,7 +20,7 @@ Mysql 을 통해 회원정보를 관리합니다
 
 #### 사용 언어 및 프레임워크, 구현환경
 
-Language : HTML, CSS, JSP, JAVA
+Language : HTML, CSS, JSP, JAVA , Javascript
 
 Framework : Spring, Mybatis
 
@@ -32,7 +30,7 @@ OS : window
 
 ##
 
-## YOU & ME (개인 프로젝트)
+## YOU & MI (개인 프로젝트)
 
 공공데이터를 활용한 미세먼지 정보를 얻을 수 있는 단일 페이지 사이트 입니다
 
@@ -44,7 +42,7 @@ OS : window
 
 #### 사용 언어 및 프레임워크, 구현환경
 
-Language : HTML, CSS, JSP, JAVA
+Language : HTML, CSS, JSP, JAVA , Javascript
 
 Framework : Spring
 
