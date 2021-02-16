@@ -1,19 +1,30 @@
 package dagachi.board.model.hjModel;
 
-import lombok.Getter;
-import lombok.Setter;
-
 public class AdminMembershipDetailsDto {
 	
-	int admin_Num;
-	String admin_Name;
-	String admin_Id;
-	String admin_Password;
-	String admin_Email;
-	String admin_PhoneNumber;
-	String dept;
-	String admin_Author;
+	private int admin_Num;
+	private String admin_Name;
+	private String admin_Id;
+	private String admin_Password;
+	private String admin_Email;
+	private String admin_PhoneNumber;
+	private String dept;
+	private String admin_Author;
+	private boolean admin_Supervisor;
 	
+	@Override
+	public String toString() {
+		return "AdminMembershipDetailsDto [admin_Num=" + admin_Num + ", admin_Name=" + admin_Name + ", admin_Id="
+				+ admin_Id + ", admin_Password=" + admin_Password + ", admin_Email=" + admin_Email
+				+ ", admin_PhoneNumber=" + admin_PhoneNumber + ", dept=" + dept + ", admin_Author=" + admin_Author
+				+ ", admin_Supervisor=" + admin_Supervisor + "]";
+	}
+	public boolean getAdmin_Supervisor() {
+		return admin_Supervisor;
+	}
+	public void setAdmin_Supervisor(boolean admin_Supervisor) {
+		this.admin_Supervisor = admin_Supervisor;
+	}
 	public int getAdmin_Num() {
 		return admin_Num;
 	}

@@ -49,7 +49,7 @@ public class LoginController {
 		if(session == null) {
 		System.out.println("세션없음"); }
 		return "board/a_adminLogin";
-		}
+	}
 	 
 	//로그인
 	@RequestMapping("login")
@@ -73,10 +73,18 @@ public class LoginController {
 	@PostMapping("loginChk")
 	public String loginChk(@RequestParam(value="admin_id")String admin_id,
 			@RequestParam(value="admin_password")String admin_password, HttpServletRequest request, RedirectAttributes redirect,HttpSession session) {
-		session =  request.getSession();
 		AdminMembershipDetailsDto login = ser.sessionInfo(admin_id, admin_password);
+		boolean supervisor = login.getAdmin_Supervisor(); 
+		if(supervisor == true) {
+		System.out.println(login.toString());
+		session =  request.getSession();
+		session.setAttribute("log_In_Supervisor", login);
+		return "redirect:a_noticeList_admin";
+		} else {
+		session =  request.getSession();
 		session.setAttribute("log_In_Admin", login);
 		return "redirect:a_noticeList";
+		}
 	}
 	
 	//로그아웃

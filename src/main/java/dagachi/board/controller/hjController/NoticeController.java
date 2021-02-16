@@ -117,7 +117,7 @@ public class NoticeController {
 		model.addAttribute("list", list);
 	}
 	 //공지사항 작성시 날짜값
-	 @ModelAttribute("today")
+	 @ModelAttribute("today")  
 	 public void today(Model model) {
 		 Date today = new Date();
 		 model.addAttribute("today",today);

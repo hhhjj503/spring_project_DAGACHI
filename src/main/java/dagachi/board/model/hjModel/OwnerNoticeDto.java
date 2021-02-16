@@ -14,7 +14,14 @@ public class OwnerNoticeDto {
     String owner_Notice_Title;
     Date owner_Notice_Created_Day;
     int admin_Num;
+    boolean pub;
     
+	public boolean getPub() {
+		return pub;
+	}
+	public void setPub(boolean pub) {
+		this.pub = pub;
+	}
 	public int getOwner_Notice_Num() {
 		return owner_Notice_Num;
 	}

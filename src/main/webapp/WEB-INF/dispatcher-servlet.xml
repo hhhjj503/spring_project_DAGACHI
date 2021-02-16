@@ -175,8 +175,13 @@
 		
 	<bean id="loginDao" class="dagachi.board.service.hjService.LoginDao"
 	p:sqlSessionFactory-ref="sqlSessionFactory"/>	
-		
+	
+	<bean id="adminLoginDao" class="dagachi.board.service.hjService.AdminLoginDao"
+	p:sqlSessionFactory-ref="sqlSessionFactory"/>
+	
 	<bean id="loginService" class="dagachi.board.service.hjService.LoginService" />
+
+	<bean id="adminLoginService" class="dagachi.board.service.hjService.AdminLoginService" />
 	
 	<bean id="fineDust" class="personal.board.model.FineDustDto" />
 	
