@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminOwnerNotice">
+
+	<update id="openIds" parameterType="string">
+		update Owner_Notice set pub = true where owner_Notice_Num In(${openIds})
+	</update>
+	
+	<update id="closeIds" parameterType="string">
+		update Owner_Notice set pub = false where owner_Notice_Num In(${delIds})
+	</update>
+	
+	<!-- <delete id="delIds" parameterType="string">
+		delete from Owner_Notice where owner_Notice_Num in()
+	</delete> -->
+	
+		
+</mapper>

@@ -68,6 +68,7 @@ margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
 
 <div id="list" style="margin-left: 0%">
 <form action="a_noticeListSearch_admin" method="post">
+
 	<table border="1" align="center" id="listtable"
 			style="background-color: white;margin-top: -2%;">
 	
@@ -98,10 +99,8 @@ margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
 			<td colspan="6" align="center" >작성된 글이 없습니다.</td>
 			</tr>
 			</c:if>
-			
-	<c:if test="${search == 0}" >
+	
 	<c:forEach items="${searchList.ownerList}" var="result" varStatus="status">
-		
 		<c:set var="open" value="checked"/>
 		<c:if test="${result.pub != true}">
 		<c:set var="open" value=""/>
@@ -120,45 +119,15 @@ margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
 			onclick=
 			"location.href='searchRead?noticeNum=${result.owner_Notice_Num}&&searchstr=${searchstr}&&admin_Num=${result.admin_Num}&&search=${search}'" /></td>
 			<td style="text-align: center;">
-			<input type="checkbox" name="ids" value="${result.owner_Notice_Num}" checked="${result.pub ? chk : ''}" ></td>
+			<input type="checkbox" name="openIds" value="${result.owner_Notice_Num}" checked="${result.pub ? chk : ''}" ></td>
 			<td style="text-align: center;">
-			<input type="checkbox" name="ids" value="${result.owner_Notice_Num}"></td>
+			<input type="checkbox" name="delIds" value="${result.owner_Notice_Num}"></td>
 			</tr>
 	</c:forEach>
-	</c:if>
 	
-	<c:if test="${search == 1}" >
-	<c:forEach items="${searchList.ownerList}" var="result" varStatus="status">
-		
-		<c:set var="open" value="checked"/>
-		<c:if test="${result.pub != true}">
-		<c:set var="open" value=""/>
-		</c:if>
-		
-		<tr>
-			<td align="center" id="noticeNum" style="padding-left: 10px;padding-right: 10px;border-style: none;height: 28px;">${result.owner_Notice_Num}</td>
-			<td align="center" id="adminNum" style="padding-left: 10px;padding-right: 10px;border-style: none;height: 25px;">${result.admin_Num}</td>
-			<td align="center" id="title" style="padding-left: 10px;padding-right: 10px;border-style: none;height: 25px;"><b>${result.owner_Notice_Title}</b></td>
-			<td align="center" id="day" style="padding-left: 10px;padding-right: 10px;border-style: none;height: 25px;">
-			<fmt:formatDate value="${result.owner_Notice_Created_Day}" pattern="yyyy/MM/dd" />
-			</td>
-			<td align="center" id="upDel" style="border: none;">
-			<input type="button" value="공지읽기"
-			style="background-color: none;height: 25px;background-color: #665F79;
-			color: white;border-radius: 5px 5px 5px 5px;margin-left: 10px;margin-right: 10px;margin-top: 2px;"
-			onclick=
-			"location.href='searchRead?noticeNum=${result.owner_Notice_Num}&&searchstr=${searchstr}&&admin_Num=${result.admin_Num}&&search=${search}'" /></td>
-			<td style="text-align: center;">
-			<input type="checkbox" name="ids" value="${result.owner_Notice_Num}" ${open} ></td>
-			<td style="text-align: center;">
-			<input type="checkbox" name="ids" value="${result.owner_Notice_Num}"></td>
-			</tr>
-	</c:forEach>
-	</c:if>
+		</table>	
+	</form>	
 	
-		</table>
-		</form>
-		
 		<p align="center">
 		<c:if test="${searchList.count > 0}">
 		

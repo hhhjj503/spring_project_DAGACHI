@@ -85,4 +85,13 @@ public class AdminLoginDao extends SqlSessionDaoSupport {
 		return adminpwd;
 	}
 
+	public int openIds(String openIds) {
+		return getSqlSession().update("AdminOwnerNotice.openIds", openIds);
+	}
+
+	public int closeIds(String delIds) {
+		return getSqlSession().update("AdminOwnerNotice.closeIds", delIds);
+	
+	}
+
 }

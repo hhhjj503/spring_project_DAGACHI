@@ -138,7 +138,7 @@ public class NoticeController {
 		 dto.setOwner_Notice_Created_Day(today);
 		 ser.noticeAdd(dto);
 		 return "redirect:a_noticeList";
-	 } 
+	 }
 	 //공지사항 수정,삭제
 	 @RequestMapping(value="noticeInfo", method = RequestMethod.GET)
 	 public String noticeSel_1(@RequestParam(value="noticeNum") int noticeNum,

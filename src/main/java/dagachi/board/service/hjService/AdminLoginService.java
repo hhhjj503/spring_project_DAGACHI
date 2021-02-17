@@ -76,6 +76,14 @@ public class AdminLoginService {
 	public String adminpwd(int admin_Num) {
 		return dao.adminpwd(admin_Num);
 	}
+	
+	public int openIds(String openIds) {
+		return dao.openIds(openIds);
+	}
+	
+	public int closeIds(String dels) {
+		return dao.closeIds(dels);
+	}
 }
 
 

@@ -47,6 +47,12 @@
 <title>게시판</title>
 </head>
 <body>
+<c:if test="${log_In_Supervisor == null }" > 
+	<script>
+	alert("로그인 후 이용하실 수 있습니다.");
+	window.location.href="a_adminLogin";
+	</script>
+</c:if>
 
 <div id="back">    
  
@@ -99,7 +105,7 @@ margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
 
 <!-- 검색Form -->
 <div style="position: absolute;margin-top: 0.75%;margin-left: 62.5%;">
-	<form id="searchForm" name="searchForm" action="a_noticeListSearch_admin" onsubmit="return chk()">
+	<form name="searchForm" action="a_noticeListSearch_admin" onsubmit="return chk()">
 			<select name="search" style="float:left;margin-right: 5px;margin-top: 3px;outline: none;">
 				<option value=0>작성자</option>
 				<option value=1>제목</option>
@@ -113,17 +119,17 @@ margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
 </div>
 
 <!-- 목록 table -->
+	<form action="a_noticeListUpDel_admin" method="post">
 			<table border="1" align="center" id="listtable"
 			style="background-color: white;margin-top: -2%;">
 			<thead>		
 			<tr>
 			<td colspan="1"><input type="button" style="background-color: #665F79;color: white;
 			border-radius: 5px 5px 5px 5px;padding-left: 10px;padding-right: 10px;height: 30px;"
-			value="새 공지 작성" onclick="location.href='noticeWriteForm'" /></td>
+			value="새 공지 작성" onclick="location.href='adminNoticeWriteForm'" /></td>
 			<td colspan="6">
 			</td>
 			</tr>
-			</thead>
 			
 			<tr> 
 			<th style="border: none;">번호</th>
@@ -141,7 +147,6 @@ margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
 			<td colspan="6" align="center" >작성된 글이 없습니다.</td>
 			</tr>
 			</c:if>
-		
 		
 		<c:forEach items="${list.ownerList}" var="result" varStatus="status">
 		<c:set var="open" value="checked"/>
@@ -163,11 +168,19 @@ margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
 		<td style="text-align: center;">
 		<input type="checkbox" name="openIds" value="${result.owner_Notice_Num}" ${open} ></td>
 		<td style="text-align: center;">
-		<input type="checkbox" name="closeIds" value="${result.owner_Notice_Num}"></td>
+		<input type="checkbox" name="delIds" value="${result.owner_Notice_Num}"></td>
 		</tr>
 		</c:forEach>
-		</table>
 		
+		</table>
+		<span style="margin-left: 78%;margin-top: 20%;">
+		<input type="submit" name="cmd" value="일괄공개" style="height: 26px;margin-left: 10px;margin-right: 5px;background-color: #665F79;
+			color: white;border-radius: 5px 5px 5px 5px;">
+		<input type="submit" name="cmd" value="일괄삭제" style="height: 26px;margin-right: 10px;background-color: #665F79;
+			color: white;border-radius: 5px 5px 5px 5px;">
+		</span>
+	</form>
+	
 		<p align="center">
 		<c:if test="${list.count > 0}">
   	<c:if test="${list.p.beginPageNumber > 10}">
