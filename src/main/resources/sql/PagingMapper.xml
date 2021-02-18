@@ -5,11 +5,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="PagingQuery">
 
-
-	
 <select id="adminTotalCount" resultType="int">
 	select count(*) from Admin_SignUp
 </select>
-
 
 </mapper>

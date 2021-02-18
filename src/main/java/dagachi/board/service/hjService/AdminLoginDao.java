@@ -36,7 +36,7 @@ public class AdminLoginDao extends SqlSessionDaoSupport {
 	}
 	
 	public int count() {
-		return getSqlSession().selectOne("OwnerNotice.count");
+		return getSqlSession().selectOne("AdminOwnerNotice.count");
 	}
 	
 	public int searchAdminCount(int admin_Num) {
@@ -53,7 +53,7 @@ public class AdminLoginDao extends SqlSessionDaoSupport {
 		List<OwnerNoticeDto> list = new ArrayList<OwnerNoticeDto>();
 		m.put("start",start);
 		m.put("per",per);
-		list = getSqlSession().selectList("OwnerNotice.limitList",m);
+		list = getSqlSession().selectList("AdminOwnerNotice.limitList",m);
 		return list;
 	}
 	

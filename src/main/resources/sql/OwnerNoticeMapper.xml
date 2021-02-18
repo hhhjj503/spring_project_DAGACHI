@@ -27,11 +27,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 	
 	<select id="count" resultType="int">
-		select count(*) from Owner_Notice
+		select count(*) from Owner_Notice where pub = true
 	</select>
 	
 	<select parameterType="map" id="limitList" resultType="dagachi.board.model.hjModel.OwnerNoticeDto">
-		select * from Owner_Notice limit #{start},#{per}
+		select * from Owner_Notice where pub = true limit #{start},#{per}
 	</select>
 	
 	<select id="searchNotice_AdminNum" parameterType="map" resultType="dagachi.board.model.hjModel.OwnerNoticeDto">

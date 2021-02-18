@@ -5,6 +5,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="AdminOwnerNotice">
 
+	<select parameterType="map" id="limitList" resultType="dagachi.board.model.hjModel.OwnerNoticeDto">
+		select * from Owner_Notice limit #{start},#{per}
+	</select>
+
 	<update id="openIds" parameterType="string">
 		update Owner_Notice set pub = true where owner_Notice_Num In(${openIds})
 	</update>
@@ -12,6 +16,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="closeIds" parameterType="string">
 		update Owner_Notice set pub = false where owner_Notice_Num In(${delIds})
 	</update>
+	
+	<select id="count" resultType="int">
+		select count(*) from Owner_Notice
+	</select>
 	
 	<!-- <delete id="delIds" parameterType="string">
 		delete from Owner_Notice where owner_Notice_Num in()
