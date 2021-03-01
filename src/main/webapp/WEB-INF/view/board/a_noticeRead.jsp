@@ -143,7 +143,7 @@ margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
 	<div style="padding-right: 4px; padding-left: 4px;margin-top: 704px;margin-left: 1223px;position: absolute;z-index: 50" align="right"> 
  	<input type="button" style="background-color: #665F79;float: right;margin-left: 4px;
 	color: white;border-radius: 5px 5px 5px 5px;padding-left: 10px;padding-right: 10px;"
-	value="목록" onclick="location.href='noticeBack'" >
+	value="목록" onclick="location.href='a_noticeList?p=${p}'" >
  	</div>
 	<!-- 수정/삭제 버튼 -->
 	<div style="position: absolute;margin-top: 37%;margin-left: 67.3%;z-index: 35;"> <!-- 수정/삭제 전송 div -->
@@ -160,7 +160,7 @@ margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
 	<div style="padding-right: 4px; padding-left: 4px;margin-top: 704px;margin-left: 1307px;position: absolute;z-index: 50" align="right"> 
  	<input type="button" style="background-color: #665F79;float: right;margin-left: 4px;
 	color: white;border-radius: 5px 5px 5px 5px;padding-left: 10px;padding-right: 10px;"
-	value="목록" onclick="location.href='noticeBack'" >
+	value="목록" onclick="location.href='a_noticeList?p=${p}'" >
  	</div>
 	</c:otherwise>
  	</c:choose>

@@ -77,13 +77,13 @@ margin-left: 45%;border-radius: 0px 0px 20px 20px;">
 
 <img src="../resources/images/logo/KakaoTalk_20200821_105423387.jpg" style="position: absolute;
 margin-left: 35%;border-radius: 150px 150px 150px 150px;position: absolute;
-margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
+margin-top: 47%;z-index: 10;opacity: 1;background-color: #E98583;">
 <div id="tata" style="border-radius: 0px 0px 30px 30px;">
 
 
 
 <div id="list" >
-<form id="noticeWrite" action="noticeWrite" method="post" onsubmit="return chk()">
+<form action="noticeWrite" method="post" onsubmit="return chk()">
  	<table style="margin-top: -40px;" align="center" >
  	<thead>
  	<tr>
@@ -121,7 +121,21 @@ margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
  	</p>
  	</td>
  	</table>
+	
+	<div style="position: absolute;background-color: white;border-radius: 10px 10px 10px 10px;
+		margin-top: 5%;margin-left: 20%;width: 600px;height: 50px;z-index: 1;">
+		<div style="margin-top: 15px;">
+		<input type="submit" style="float: right;margin-right: 20px;"/>
+		<input type="file" id="files" name="files" style="float: left;width: 500px;margin-left: 20px;
+		background-color: #E2E2E2;border: 0.5px;"/>
+		<input type="hidden" value="${choose.owner_Notice_Num}" name="noticeNum"/>
+		<input type="hidden" value="${choose.admin_Num}" name="admin_Num"/>
+		</div>
+	</div>
+	
  </form>
+ 
+
  </div>
  </div>
  </div>

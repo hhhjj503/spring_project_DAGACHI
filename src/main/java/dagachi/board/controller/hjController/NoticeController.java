@@ -65,6 +65,7 @@ public class NoticeController {
 		m.addAttribute("list", list);
 		int number = list.getCount() - (pageNum - 1) * per;
 		m.addAttribute("number", number);
+		m.addAttribute("p", pageNum);
 		return "/board/a_noticeList";
 	}
 	
@@ -99,7 +100,7 @@ public class NoticeController {
 	}
 	//목록으로
 	@RequestMapping("noticeBack")
-	public String noticeBack() {
+	public String noticeBack(@RequestParam(value = "p", defaultValue = "1") int pageNum) {
 		return "redirect:a_noticeList";
 	}
 	//검색후 목록가기
@@ -156,7 +157,10 @@ public class NoticeController {
 	 
 	 //공지사항 읽기
 	 @RequestMapping("noticeRead")
-	 public String noticeRead_1(@RequestParam(value="noticeNum") int noticeNum, Model model) {
+	 public String noticeRead_1(
+			 @RequestParam(value="noticeNum") int noticeNum,
+			 @RequestParam(value = "p", defaultValue = "1") int pageNum,
+			 Model model) {
 		 OwnerNoticeDto choose = new OwnerNoticeDto();
 		
 		//해당공지번호로 파일이 있다면 파일객체를 전송함
@@ -168,6 +172,7 @@ public class NoticeController {
 		}
 		choose = ser.noticeSel_1(noticeNum);
 		model.addAttribute("choose", choose);
+		model.addAttribute("p", pageNum);
 		
 		return "board/a_noticeRead";
 	}

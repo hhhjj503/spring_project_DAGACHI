@@ -154,12 +154,12 @@ margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
 			<td align="center" style="border: none;">
 			<input type="button" value="공지읽기" style="height: 26px;margin-left: 10px;margin-right: 10px;background-color: #665F79;
 			color: white;border-radius: 5px 5px 5px 5px;"
-			onclick="location.href='noticeRead?noticeNum=${result.owner_Notice_Num}&&admin_Num=${result.admin_Num}'"/></td>
+			onclick="location.href='noticeRead?noticeNum=${result.owner_Notice_Num}&&admin_Num=${result.admin_Num}&&p=${p}'"/></td>
 		</tr>
 		</c:if>
 		</c:forEach>
 		</table>
-		
+
 		<p align="center">
 		<c:if test="${list.count > 0}">
   	<c:if test="${list.p.beginPageNumber > 10}">

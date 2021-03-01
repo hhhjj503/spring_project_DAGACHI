@@ -40,12 +40,13 @@
 
 </head>
 <body>
-<c:if test="${log_In_Admin == null }" > 
+<c:if test="${log_In_Supervisor == null }" > 
 	<script>
-	alert("로그인 후 이용하실 수 있습니다.");
+	alert("관리자만 이용하실 수 있습니다.");
 	window.location.href="a_adminLogin";
 	</script>
 </c:if>
+
 <div id="back">    
  
 <div id="menu">

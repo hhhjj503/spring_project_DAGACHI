@@ -155,7 +155,7 @@ margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
  </div>
  
 <!-- 파일업로드 input-->
- <form id="noticeUpdate"name="noticeUpdate" action="noticeUpdate" enctype="multipart/form-data" onsubmit="return ChkCnt()" method="post">
+ <form  name="noticeFileUpdate" action="fileUpload" enctype="multipart/form-data" onsubmit="return ChkCnt()" method="post">
 <div style="position: absolute;background-color: white;border-radius: 10px 10px 10px 10px;z-index: 40;
 margin-top: 40%;margin-left: 35%;width: 600px;height: 50px;">
 <div style="margin-top: 15px;">
