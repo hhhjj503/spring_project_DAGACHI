@@ -10,12 +10,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		values(#{admin_Id},#{orgFileName},#{StoredFileName},#{Content_Type},#{file_Size});
 	</insert>
 	
-	<select id="adminProfileUpCount" parameterType="string" resultType="int">
+	<select id="adminProfileUpCount" resultType="int">
 		select count(*) from admin_profile where admin_Id = #{admin_Id}
 	</select>
 	
 	<select id="getAdminProfileUp" parameterType="string" resultType="dagachi.board.model.hjModel.AdminProfile">
 		select * from admin_profile where admin_Id = #{admin_Id}
 	</select>
+	
+	<delete id="delAdminProfileUp" parameterType="string">
+		delete from admin_profile where admin_Id = #{admin_Id}
+	</delete>
 	
 </mapper>

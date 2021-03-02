@@ -123,7 +123,7 @@ margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
 
 <div id="profile" style="z-index: 10;width: 400px;height: 400px;background-color: white;
 border-radius: 20px 20px 20px 20px;position: absolute;margin-left: 2.5%;margin-top: 12%">
-<img alt="" src="/resources/images/logo/capture.PNG" width="350px" height="350px" border="1"
+<img alt="" src="${profile}" width="350px" height="350px" border="1"
 style="margin-left: 25px;margin-top: 10px;">	
 
 <form action="adminProfile" method="post" enctype="multipart/form-data" >

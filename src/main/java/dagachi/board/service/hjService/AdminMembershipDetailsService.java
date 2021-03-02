@@ -100,4 +100,8 @@ public class AdminMembershipDetailsService {
 		return dao.getAdminProfileUp(admin_Id);
 	}
 	
+	public void delAdminProfileUp(String admin_Id) {
+		dao.delAdminProfileUp(admin_Id);
+	}
+	
 }

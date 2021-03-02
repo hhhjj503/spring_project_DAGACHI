@@ -105,7 +105,11 @@ public class AdminMembershipDetailsController {
 	
 	//관리자 프로필사진 업로드
 	@RequestMapping(value="adminProfile", method=RequestMethod.POST)
-	public String adminProfile(@RequestParam("admin_Id")String admin_Id, MultipartFile file,HttpServletRequest request) {
+	public String adminProfile(@RequestParam("admin_Id")String admin_Id, MultipartFile file,HttpServletRequest request, Model model ) {
+		 int profileCount = adser.adminProfileUpCount(admin_Id);
+		 if(profileCount > 0) 
+		adser.delAdminProfileUp(admin_Id);
+		
 		String filePath = request.getSession().getServletContext().getRealPath("/resources/profileImages");
 		AdminProfile profile = new AdminProfile();
 		String formattedDate =
@@ -145,10 +149,15 @@ public class AdminMembershipDetailsController {
 		fos.close();
 		fis.close();
 		
+		int path1 = storedFileName.indexOf("profileImages");
+		String path2 = storedFileName.substring(path1, storedFileName.length());
+		model.addAttribute("profile","/resources/" + path2);
+		
 	   } catch (IOException e) {
 		e.printStackTrace();
 	}
-	   return "board/a_adminUpdateDelete";
+	    
+	   return "board/a_adminLoginUpdateDelete";
 	}
 	
 	
@@ -171,12 +180,22 @@ public class AdminMembershipDetailsController {
 	//로그인 후 관리자 정보란 이동
 	@RequestMapping("adminLoginUpdateDelete")
 	public String adminLoginUpdateDelete(@RequestParam("admin_Id")String admin_Id, Model model) {
-		
+		System.out.println("admin_Id : " + admin_Id);
 		 int profileCount = adser.adminProfileUpCount(admin_Id);
-		 System.out.println(1);
-		 if(profileCount > 0) {AdminProfile profile = adser.getAdminProfileUp(admin_Id);}
+		 System.out.println("profileCount : " + profileCount);
+		 if(profileCount > 0) {
+			 AdminProfile profile = adser.getAdminProfileUp(admin_Id);
+			 String storedName = profile.getStoredFileName();
+			 int path1 = storedName.indexOf("profileImages");
+			 String path2 = storedName.substring(path1, storedName.length());
+			 model.addAttribute("profile","/resources/" + path2);
+			 System.out.println("문자 자르기 : " + path2);
+			 System.out.println(storedName);
+		 } else {
+			 model.addAttribute("profile","/resources/images/logo/capture.PNG");
+		 }
 		 System.out.println(2);
-		return "redirect:board/a_adminLoginUpdateDelete";
+		return "board/a_adminLoginUpdateDelete";
 	}
 	
 	

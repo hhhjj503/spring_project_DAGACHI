@@ -75,7 +75,7 @@ public class AdminMembershipDetailsDao extends SqlSessionDaoSupport{
 	}
 
 	public void adminProfileUp(AdminProfile adminProfile) {
-		getSqlSession().selectOne("AdminProfile.adminProfileUp", adminProfile);
+		getSqlSession().insert("AdminProfile.adminProfileUp", adminProfile);
 	}
 
 	public int adminProfileUpCount(String admin_Id) {
@@ -85,5 +85,11 @@ public class AdminMembershipDetailsDao extends SqlSessionDaoSupport{
 	public AdminProfile getAdminProfileUp(String admin_Id) {
 		return getSqlSession().selectOne("AdminProfile.getAdminProfileUp",admin_Id);
 	}
+	
+	public void delAdminProfileUp(String admin_Id) {
+		getSqlSession().delete("AdminProfile.delAdminProfileUp",admin_Id);
+	}
+	
+	
 	
 }
