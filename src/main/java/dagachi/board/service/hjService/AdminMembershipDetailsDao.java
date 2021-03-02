@@ -9,6 +9,7 @@ import java.util.Map;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import dagachi.board.model.hjModel.AdminMembershipDetailsDto;
+import dagachi.board.model.hjModel.AdminProfile;
 import dagachi.board.model.hjModel.OwnerNoticeDto;
 
 public class AdminMembershipDetailsDao extends SqlSessionDaoSupport{
@@ -71,6 +72,18 @@ public class AdminMembershipDetailsDao extends SqlSessionDaoSupport{
 	
 	public int emailDuplicateChk(String admin_Email) {
 		return getSqlSession().selectOne("AdminQuery.emailDuplicateChk", admin_Email);
+	}
+
+	public void adminProfileUp(AdminProfile adminProfile) {
+		getSqlSession().selectOne("AdminProfile.adminProfileUp", adminProfile);
+	}
+
+	public int adminProfileUpCount(String admin_Id) {
+		return getSqlSession().selectOne("AdminProfile.adminProfileUpCount",admin_Id);
+	}
+
+	public AdminProfile getAdminProfileUp(String admin_Id) {
+		return getSqlSession().selectOne("AdminProfile.getAdminProfileUp",admin_Id);
 	}
 	
 }

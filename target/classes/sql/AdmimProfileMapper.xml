@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminProfile">
+
+	<insert id="adminProfileUp" parameterType="dagachi.board.model.hjModel.AdminProfile">
+		insert into admin_profile(admin_id,orgfilename,storedfilename,content_type,file_size) 
+		values(#{admin_Id},#{orgFileName},#{StoredFileName},#{Content_Type},#{file_Size});
+	</insert>
+	
+	<select id="adminProfileUpCount" parameterType="string" resultType="int">
+		select count(*) from admin_profile where admin_Id = #{admin_Id}
+	</select>
+	
+	<select id="getAdminProfileUp" parameterType="string" resultType="dagachi.board.model.hjModel.AdminProfile">
+		select * from admin_profile where admin_Id = #{admin_Id}
+	</select>
+	
+</mapper>

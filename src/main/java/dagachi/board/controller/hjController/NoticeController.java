@@ -197,11 +197,9 @@ public class NoticeController {
 	       for(MultipartFile file : files) {
 	          Date date = new Date();
               String contentType = file.getContentType();
-              String name = file.getName();
               String originalFilename = file.getOriginalFilename();
               long size = file.getSize();
               String extension = "." + FilenameUtils.getExtension(file.getOriginalFilename()); //파일에서 확장자만 구하는 메소드
-              String baseName = FilenameUtils.getBaseName(file.getOriginalFilename()); //파일에서 이름만 구하는 메소드
               String uuid = UUID.randomUUID().toString() + file.getName(); // 중복될 일이 거의 없다. 6dfba64a-d23e-491f-980d-44d0bc1bdb5f 이런식으로 생성
               String saveFileName = formattedDate + File.separator + uuid + extension; // 실제 저장되는 파일의 절대 경로
               // 아래에서 출력되는 결과는 모두 database에 저장되야 한다.

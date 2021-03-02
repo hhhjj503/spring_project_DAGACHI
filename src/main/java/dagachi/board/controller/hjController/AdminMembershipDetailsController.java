@@ -1,8 +1,17 @@
 package dagachi.board.controller.hjController;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,9 +20,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import dagachi.board.model.hjModel.AdminMembershipDetailsDto;
 import dagachi.board.model.hjModel.AdminPagingDto;
+import dagachi.board.model.hjModel.AdminProfile;
 import dagachi.board.service.hjService.AdminMembershipDetailsService;
 
 @Controller
@@ -92,6 +103,55 @@ public class AdminMembershipDetailsController {
 		return "redirect:a_adminAccountList";
 	}
 	
+	//관리자 프로필사진 업로드
+	@RequestMapping(value="adminProfile", method=RequestMethod.POST)
+	public String adminProfile(@RequestParam("admin_Id")String admin_Id, MultipartFile file,HttpServletRequest request) {
+		String filePath = request.getSession().getServletContext().getRealPath("/resources/profileImages");
+		AdminProfile profile = new AdminProfile();
+		String formattedDate =
+				filePath + File.separator + new SimpleDateFormat("yyyy"+ File.separator+"MM" + File.separator + "dd").format(new Date());
+		System.out.println("파일 업로드 경로 : "+ formattedDate);
+		File f = new File(formattedDate);
+		
+		if(!f.exists()) f.mkdirs();
+		
+		String orgFileName = file.getOriginalFilename(); //원래파일이름가져오기
+	    String extention = "." + FilenameUtils.getExtension(file.getOriginalFilename()); //확장자추출
+	    String uuid = UUID.randomUUID().toString(); //랜덤문자열값추출
+	    System.out.println("파일 이름 : " + uuid);
+	    String storedFileName = formattedDate + File.separator + uuid + extention;
+	    String filePaths = formattedDate + File.separator + orgFileName;
+	    System.out.println("저장되는 파일이름 : " + storedFileName);
+	    String content_Type = file.getContentType();
+	    long file_Size = file.getSize();
+		  
+	    profile.setAdmin_Id(admin_Id);
+	    profile.setOrgFileName(orgFileName);
+	    profile.setStoredFileName(storedFileName);
+	    profile.setFile_Size(String.valueOf(file_Size));
+	    profile.setContent_Type(content_Type);
+	    
+	    adser.adminProfileUp(profile);
+	    
+	   try {
+		InputStream fis = file.getInputStream();
+		FileOutputStream fos = new FileOutputStream(storedFileName);
+		int readCount = 0;
+		byte[] buffer = new byte[1024];
+			while( (readCount = fis.read(buffer)) != -1 ) {
+				fos.write(buffer,0,readCount);
+			}
+			
+		fos.close();
+		fis.close();
+		
+	   } catch (IOException e) {
+		e.printStackTrace();
+	}
+	   return "board/a_adminUpdateDelete";
+	}
+	
+	
 	//아이디 중복확인
 	@RequestMapping(value ="duplicateChk", method = RequestMethod.POST)
 	@ResponseBody
@@ -110,8 +170,14 @@ public class AdminMembershipDetailsController {
 	
 	//로그인 후 관리자 정보란 이동
 	@RequestMapping("adminLoginUpdateDelete")
-	public String adminLoginUpdateDelete(@RequestParam("admin_Id")String admin_Id) {
-		return "board/a_adminLoginUpdateDelete";
+	public String adminLoginUpdateDelete(@RequestParam("admin_Id")String admin_Id, Model model) {
+		
+		 int profileCount = adser.adminProfileUpCount(admin_Id);
+		 System.out.println(1);
+		 if(profileCount > 0) {AdminProfile profile = adser.getAdminProfileUp(admin_Id);}
+		 System.out.println(2);
+		return "redirect:board/a_adminLoginUpdateDelete";
 	}
+	
 	
 }

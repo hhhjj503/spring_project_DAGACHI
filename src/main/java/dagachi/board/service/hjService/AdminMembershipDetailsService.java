@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import dagachi.board.model.hjModel.AdminMembershipDetailsDto;
 import dagachi.board.model.hjModel.AdminPagingDto;
+import dagachi.board.model.hjModel.AdminProfile;
 import dagachi.board.model.hjModel.OwnerNoticeDto;
 import dagachi.board.model.hjModel.OwnerPagingDto;
 import dagachi.board.model.hjModel.PagingVO;
@@ -62,6 +63,10 @@ public class AdminMembershipDetailsService {
 		return new AdminPagingDto(count,dto,pageNum,p.getTotalPageCount(),start,p);
 	}
 	
+	//관리자 프로필사진
+	public void adminProfileUp(AdminProfile adminProfile) {
+		dao.adminProfileUp(adminProfile);
+	}
 	
 	public AdminPagingDto searchLimitList(int admin_Num, int pageNum, int per){
 		int count = dao.searchCount(admin_Num);
@@ -83,6 +88,16 @@ public class AdminMembershipDetailsService {
 	
 	public int emailDuplicateChk(String admin_Email) {
 		return dao.emailDuplicateChk(admin_Email);
+	}
+
+
+	public int adminProfileUpCount(String admin_Id) {
+		return dao.adminProfileUpCount(admin_Id);
+	}
+
+
+	public AdminProfile getAdminProfileUp(String admin_Id) {
+		return dao.getAdminProfileUp(admin_Id);
 	}
 	
 }

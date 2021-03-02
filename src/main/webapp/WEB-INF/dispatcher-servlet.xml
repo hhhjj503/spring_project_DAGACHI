@@ -168,6 +168,8 @@
 
 	<bean id="commentDto" class="dagachi.board.model.hjModel.CommentDto"/>
 	
+	<bean id="adminProfileUp" class="dagachi.board.model.hjModel.AdminProfile" />
+	
 	<bean id="commentPagingDao" class="dagachi.board.service.hjService.CommentPagingDao"
 	p:sqlSessionFactory-ref="sqlSessionFactory" />
 	
