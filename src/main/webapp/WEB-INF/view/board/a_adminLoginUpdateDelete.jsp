@@ -123,16 +123,19 @@ margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
 
 <div id="profile" style="z-index: 10;width: 400px;height: 400px;background-color: white;
 border-radius: 20px 20px 20px 20px;position: absolute;margin-left: 2.5%;margin-top: 12%">
-<img alt="" src="${profile}" width="350px" height="350px" border="1"
+<img alt="profileImage" src="${profile}" width="350px" height="350px" border="1"
 style="margin-left: 25px;margin-top: 10px;">	
 
 <form action="adminProfile" method="post" enctype="multipart/form-data" >
 	<input type="file" style="background-color: #665F79;margin-left: 4px;
-			color: white;border-radius: 5px 5px 5px 5px;padding-left: 10px;padding-right: 10px;width: 250px;margin-left: 25px;
+			color: white;border-radius: 5px 5px 5px 5px;padding-left: 10px;padding-right: 10px;width: 200px;margin-left: 25px;
 			padding-top: 3px;padding-bottom: 3px" name="file">
 	<input type="hidden" value="${log_In_Admin.admin_Id}" name="admin_Id">
 	<input type="submit" value="업로드" style="background-color: #665F79;margin-left: 4px;
-			color: white;border-radius: 5px 5px 5px 5px;padding-left: 10px;padding-right: 10px;"> 
+			color: white;border-radius: 5px 5px 5px 5px;padding-left: 10px;padding-right: 10px;">
+	<input type="button" value="삭제" style="background-color: #665F79;margin-left: 4px;
+			color: white;border-radius: 5px 5px 5px 5px;padding-left: 10px;padding-right: 10px;"
+			onclick="location.href='adminProfileDel?admin_Id=${log_In_Admin.admin_Id}'">
 </form>
 
 </div>
@@ -185,7 +188,7 @@ style="margin-left: 25px;margin-top: 10px;">
 			
 		<input type="button" style="background-color: #665F79;margin-left: 4px;
 			color: white;border-radius: 5px 5px 5px 5px;padding-left: 10px;padding-right: 10px;"
-			value="취소" onclick="history.go(-1)"></td>
+			value="취소" onclick="location.href='a_noticeList'"></td>
 			</p>
 		</p>
 	</table>

@@ -10,7 +10,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		values(#{admin_Id},#{orgFileName},#{StoredFileName},#{Content_Type},#{file_Size});
 	</insert>
 	
-	<select id="adminProfileUpCount" resultType="int">
+	<select id="adminProfileUpCount" parameterType="string" resultType="int">
 		select count(*) from admin_profile where admin_Id = #{admin_Id}
 	</select>
 	

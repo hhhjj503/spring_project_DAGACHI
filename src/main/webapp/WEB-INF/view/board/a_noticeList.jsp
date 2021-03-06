@@ -85,7 +85,7 @@ margin-top: 47%;z-index: 17;opacity: 1;background-color: #E98583;">
 	<div style="position: absolute;background-color: white;width: 250px;
 	height: 60px;border-radius: 10px 10px 10px 10px;margin-left: 1215px;margin-top:16px; padding-left: 20px;">
 	<div style="position: absolute;margin-top: 15px;">
-	<b><a href="adminLoginUpdateDelete?admin_Id='${log_In_Admin.admin_Id}'" style="color: black;">
+	<b><a href="adminLoginUpdateDelete?admin_Id=${log_In_Admin.admin_Id}" style="color: black;">
 	${log_In_Admin.admin_Name}</a></b> 님 안녕하세요
 	<input type="button" id="logout" name="logout" style="background-color: #665F79;height: 30px;
 			color: white;border-radius: 5px 5px 5px 5px;padding-left: 10px;padding-right: 10px;" value= "로그아웃"

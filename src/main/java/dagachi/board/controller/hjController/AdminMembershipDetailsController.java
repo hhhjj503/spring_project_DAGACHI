@@ -103,13 +103,19 @@ public class AdminMembershipDetailsController {
 		return "redirect:a_adminAccountList";
 	}
 	
+	//프로필 이미지 삭제
+	@RequestMapping(value="adminProfileDel", method=RequestMethod.GET)
+	public String adminProfileDel(@RequestParam("admin_Id")String admin_Id, Model model) {
+		adser.delAdminProfileUp(admin_Id);
+		model.addAttribute("profile","/resources/profileImages/images.png");
+		return "board/a_adminLoginUpdateDelete";
+	}
+	
+	
 	//관리자 프로필사진 업로드
 	@RequestMapping(value="adminProfile", method=RequestMethod.POST)
 	public String adminProfile(@RequestParam("admin_Id")String admin_Id, MultipartFile file,HttpServletRequest request, Model model ) {
-		 int profileCount = adser.adminProfileUpCount(admin_Id);
-		 if(profileCount > 0) 
 		adser.delAdminProfileUp(admin_Id);
-		
 		String filePath = request.getSession().getServletContext().getRealPath("/resources/profileImages");
 		AdminProfile profile = new AdminProfile();
 		String formattedDate =
@@ -180,8 +186,7 @@ public class AdminMembershipDetailsController {
 	//로그인 후 관리자 정보란 이동
 	@RequestMapping("adminLoginUpdateDelete")
 	public String adminLoginUpdateDelete(@RequestParam("admin_Id")String admin_Id, Model model) {
-		System.out.println("admin_Id : " + admin_Id);
-		 int profileCount = adser.adminProfileUpCount(admin_Id);
+		int profileCount = adser.adminProfileUpCount(admin_Id);
 		 System.out.println("profileCount : " + profileCount);
 		 if(profileCount > 0) {
 			 AdminProfile profile = adser.getAdminProfileUp(admin_Id);
@@ -192,11 +197,10 @@ public class AdminMembershipDetailsController {
 			 System.out.println("문자 자르기 : " + path2);
 			 System.out.println(storedName);
 		 } else {
-			 model.addAttribute("profile","/resources/images/logo/capture.PNG");
+			 model.addAttribute("profile","/resources/profileImages/images.png");
 		 }
 		 System.out.println(2);
 		return "board/a_adminLoginUpdateDelete";
 	}
-	
 	
 }
