@@ -60,6 +60,7 @@ OS : window
 공공데이터를 활용한 미세먼지 정보를 얻을 수 있는 단일 페이지 사이트 입니다
 
 특정 구를 입력하면 해당 구에 맞는 미세먼지 정보 및 대기정보를 제공 받을 수 있습니다
+<br/><br/>
 <img src="https://user-images.githubusercontent.com/69440128/206435928-95d52ff2-6ffd-428e-98fa-c041728a7c09.jpg"/>
 <br/>
 <img src="https://user-images.githubusercontent.com/69440128/206435930-a00c852c-3768-4b6f-8008-92491810d351.jpg"/>
