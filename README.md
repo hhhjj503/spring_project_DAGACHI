@@ -62,14 +62,14 @@ OS : window
 특정 구를 입력하면 해당 구에 맞는 미세먼지 정보 및 대기정보를 제공 받을 수 있습니다
 <br/><br/>
 <img src="https://user-images.githubusercontent.com/69440128/206435928-95d52ff2-6ffd-428e-98fa-c041728a7c09.jpg"/>
-<br/>
+<br/><br/>
 <img src="https://user-images.githubusercontent.com/69440128/206435930-a00c852c-3768-4b6f-8008-92491810d351.jpg"/>
-<br/>
+<br/><br/>
 <img src="https://user-images.githubusercontent.com/69440128/206435879-b9ec95af-16c1-4cc0-a942-089cb58c77f0.jpg"/>
-<br/>
+<br/><br/>
 ![YOU & ME MAIN](./images/finedustMain.png)
 
-<메인 페이지>
+<index 페이지>
 
 #### 사용 언어 및 프레임워크, 구현환경
 
