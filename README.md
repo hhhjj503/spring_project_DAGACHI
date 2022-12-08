@@ -12,31 +12,31 @@ Spring을 통해 음식점 예약 사이트를 만드는 DAGACHI 프로젝트 �
 <br/><br/>
 <img src="https://user-images.githubusercontent.com/69440128/206436068-e2262820-3f4e-4d76-b0b5-f2894ff2caf5.jpg" align="center" />
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435761-6b089aeb-890e-41af-9d8e-43fe011d4113.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435761-6b089aeb-890e-41af-9d8e-43fe011d4113.jpg" align="center"/>
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435886-6c157d27-544d-4b0b-9656-21a8b3bd3326.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435886-6c157d27-544d-4b0b-9656-21a8b3bd3326.jpg" align="center"/>
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435888-62bb471b-c86e-4b6e-9de9-157ee4ec0359.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435888-62bb471b-c86e-4b6e-9de9-157ee4ec0359.jpg" align="center"/>
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435891-8fdb9263-5edb-4461-bd89-baa41724e202.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435891-8fdb9263-5edb-4461-bd89-baa41724e202.jpg" align="center"/>
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435893-2398d107-01f7-4a5c-926b-4a5bbc116a0a.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435893-2398d107-01f7-4a5c-926b-4a5bbc116a0a.jpg" align="center"/>
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435898-ab0c36c4-6b9a-4a30-9915-d0f3a417bfb3.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435898-ab0c36c4-6b9a-4a30-9915-d0f3a417bfb3.jpg" align="center"/>
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435902-00ed2742-21b2-4ce1-b54d-aa743ea61232.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435902-00ed2742-21b2-4ce1-b54d-aa743ea61232.jpg" align="center"/>
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435908-f5418ae3-e4e0-4e2f-a1ae-911a1fd11da4.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435908-f5418ae3-e4e0-4e2f-a1ae-911a1fd11da4.jpg" align="center"/>
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435912-0a62ee46-fd24-4b56-9a88-d085bf148b91.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435912-0a62ee46-fd24-4b56-9a88-d085bf148b91.jpg" align="center"/>
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435914-5eaa873f-f78e-4e2e-8415-210fb6e01742.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435914-5eaa873f-f78e-4e2e-8415-210fb6e01742.jpg" align="center"/>
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435919-472a4f2c-d525-42bf-92b3-2a61bf9e6516.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435919-472a4f2c-d525-42bf-92b3-2a61bf9e6516.jpg" align="center"/>
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435922-24cfc557-dd6b-4cc6-858f-1ce73c3aa696.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435922-24cfc557-dd6b-4cc6-858f-1ce73c3aa696.jpg" align="center"/>
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435924-b70c99d8-27cb-415d-a3f9-2747d9da9466.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435924-b70c99d8-27cb-415d-a3f9-2747d9da9466.jpg" align="center"/>
 <br/>
 
 ![DAGACHI MAIN](./images/Admin_Login.png)
@@ -61,11 +61,11 @@ OS : window
 
 특정 구를 입력하면 해당 구에 맞는 미세먼지 정보 및 대기정보를 제공 받을 수 있습니다
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435928-95d52ff2-6ffd-428e-98fa-c041728a7c09.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435928-95d52ff2-6ffd-428e-98fa-c041728a7c09.jpg" align="center"/>
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435930-a00c852c-3768-4b6f-8008-92491810d351.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435930-a00c852c-3768-4b6f-8008-92491810d351.jpg" align="center"/>
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435879-b9ec95af-16c1-4cc0-a942-089cb58c77f0.jpg"/>
+<img src="https://user-images.githubusercontent.com/69440128/206435879-b9ec95af-16c1-4cc0-a942-089cb58c77f0.jpg" align="center"/>
 <br/><br/>
 ![YOU & ME MAIN](./images/finedustMain.png)
 
