@@ -10,7 +10,7 @@ Spring을 통해 음식점 예약 사이트를 만드는 DAGACHI 프로젝트 �
 
 회원은 가입 후 글을 작성할 수 있으며 그 외 파일 (업로드 , 다운로드) , 게시글 (수정, 삭제), 회원정보 (수정, 탈퇴) , 댓글 (등록 , 수정, 삭제) 등의 작업이 가능합니다
 <br/><br/>
-<img src="https://user-images.githubusercontent.com/69440128/206436068-e2262820-3f4e-4d76-b0b5-f2894ff2caf5.jpg" width="100%" />
+<img src="https://user-images.githubusercontent.com/69440128/206436068-e2262820-3f4e-4d76-b0b5-f2894ff2caf5.jpg" width="1400" />
 <br/><br/>
 <img src="https://user-images.githubusercontent.com/69440128/206435761-6b089aeb-890e-41af-9d8e-43fe011d4113.jpg"/>
 <br/>
