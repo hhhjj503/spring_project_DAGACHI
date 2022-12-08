@@ -37,12 +37,7 @@ Spring을 통해 음식점 예약 사이트를 만드는 DAGACHI 프로젝트 �
 <br/>
 <img src="https://user-images.githubusercontent.com/69440128/206435924-b70c99d8-27cb-415d-a3f9-2747d9da9466.jpg"/>
 <br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435928-95d52ff2-6ffd-428e-98fa-c041728a7c09.jpg"/>
-<br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435930-a00c852c-3768-4b6f-8008-92491810d351.jpg"/>
-<br/>
-<img src="https://user-images.githubusercontent.com/69440128/206435879-b9ec95af-16c1-4cc0-a942-089cb58c77f0.jpg"/>
-<br/>
+
 ![DAGACHI MAIN](./images/Admin_Login.png)
 
 <로그인 페이지>
@@ -64,7 +59,12 @@ OS : window
 공공데이터를 활용한 미세먼지 정보를 얻을 수 있는 단일 페이지 사이트 입니다
 
 특정 구를 입력하면 해당 구에 맞는 미세먼지 정보 및 대기정보를 제공 받을 수 있습니다
-
+<img src="https://user-images.githubusercontent.com/69440128/206435928-95d52ff2-6ffd-428e-98fa-c041728a7c09.jpg"/>
+<br/>
+<img src="https://user-images.githubusercontent.com/69440128/206435930-a00c852c-3768-4b6f-8008-92491810d351.jpg"/>
+<br/>
+<img src="https://user-images.githubusercontent.com/69440128/206435879-b9ec95af-16c1-4cc0-a942-089cb58c77f0.jpg"/>
+<br/>
 ![YOU & ME MAIN](./images/finedustMain.png)
 
 <메인 페이지>
